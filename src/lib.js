@@ -1,4 +1,4 @@
-export class Ad {
+class Ad {
     constructor(id, title, category,text, price, seller, photos, date) {
         this.id = id;
         this.date = date;
@@ -37,7 +37,7 @@ export class Ads {
 
 export const ads = new Ads();
 
-export class Seller {
+class Seller {
     constructor(id, name, phone) {
         this.id = id;
         this.name = name;

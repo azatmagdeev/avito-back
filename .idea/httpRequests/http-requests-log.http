@@ -1,0 +1,169 @@
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-10T055741.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-10T055445.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-10T053416.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T085641.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T085245.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T085153.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T085138.500.html
+
+###
+
+GET http://localhost:7777
+Accept: application/json
+
+<> 2019-08-09T085113.404.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T084100.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T083444.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T083238.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T083026.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T062318.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T061742.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T061135.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T060339.500.html
+
+###
+
+GET http://localhost:7777/items
+Accept: application/json
+
+<> 2019-08-09T060313.500.html
+
+###
+
+GET http://localhost:7777/items
+
+Accept: application/json
+
+<> 2019-08-09T060124.500.html
+
+###
+
+GET http://localhost:7777/items
+
+Accept: application/json
+
+<> 2019-08-09T055353.500.html
+
+###
+
+GET http://localhost:7777/items
+
+Accept: application/json
+
+<> 2019-08-09T055238.404.html
+
+###
+
+GET http://localhost:7777
+Accept: application/json
+
+<> 2019-08-08T075625.500.html
+
+###
+
+GET http://localhost:7777
+Accept: application/json
+
+<> 2019-08-08T074509.500.html
+
+###
+
+GET http://localhost:7777
+Accept: application/json
+
+<> 2019-08-08T055138.500.html
+
+###
+
+GET http://localhost:7777
+Accept: application/json
+
+###
+
