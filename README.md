@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/azatmagdeev/avito-back.svg?branch=master)](https://travis-ci.org/azatmagdeev/avito-back)
