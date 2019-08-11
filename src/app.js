@@ -16,8 +16,8 @@ server.get('/', (req, res) => {
     res.send(ads.items)
 });
 
+const port = process.env.PORT || 7777;
 
-
-server.listen(7777,()=>{
+server.listen(port,()=>{
     console.log('server started')
 });
