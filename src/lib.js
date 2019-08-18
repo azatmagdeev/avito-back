@@ -1,18 +1,20 @@
 export let itemsNextId = 1;
 
 export class Ad {
-    constructor(id, title, category, text, price, seller, photos, date) {
+    constructor(id, brand,model, year, km, gearbox, text, price, sellerId, photos, date) {
         this.id = id;
-        this.date = date;
-        this.title = title;
-        this.category = category;
-        this.price = price;
-        this.seller = seller;
-        this.photos = photos;
+        this.brand = brand;
+        this.model = model;
+        this.year =year;
+        this.km = km;
+        this.gearbox = gearbox;
         this.text = text;
+        this.price = price;
+        this.sellerId = sellerId;
+        this.photos = photos;
+        this.date = date;
     }
 }
-
 
 export class Ads {
     constructor() {
@@ -28,6 +30,7 @@ export class Ads {
     }
 
     getAllItems(){
+        this.items =[];
         this.sellers.map(seller =>{
             seller.items.map(ad => {
                 this.items.push(ad)
@@ -47,7 +50,19 @@ export class Seller {
         this.items = [];
     }
 
-    addNewAd(title, category, text, price, photos) {
-        this.items.push(new Ad(itemsNextId++, title, category, text, price, this.id, photos, new Date))
+    addNewAd(brand, model, year, km, gearbox, text, price, photos) {
+        this.items.push(new Ad(
+            itemsNextId++,
+            brand,
+            model,
+            year,
+            km,
+            gearbox,
+            text,
+            price,
+            this.id,
+            photos,
+            new Date()
+        ))
     }
 }
