@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import fs from 'fs-extra';
 import {Ads} from "./lib";
 
 const server = express();
@@ -23,7 +24,11 @@ azat.addNewAd('Chevrolet',
     'Я собственник , Авто вложений не требует, торг минимальный, только при осмотре и аргументированный! \n' +
     'В поддержке Авто экспертов не нуждаюсь.',
     279000,
-    []);
+    [
+        'img/autos/lacetti/1.jpg',
+        'img/autos/lacetti/2.jpg',
+        'img/autos/lacetti/3.jpg',
+    ]);
 
 azat.addNewAd('Kia',
     'Rio',
@@ -36,7 +41,9 @@ azat.addNewAd('Kia',
  салон чистый не прокуренный. Возможна  продажа в АВТОКРЕДИТ, или потреб.Кредит через Сбербанк Онлайн.
   Юридически чистый , без запретов , штрафов, и залогов !`,
     550000,
-    [],
+    [
+        'img/autos/rio/1.jpg',
+    ],
 )
 ;
 
@@ -52,7 +59,7 @@ enzhe.addNewAd(
 Без коррозии и дефектов
 Зимняя резина в комплекте`,
     233000,
-    []);
+    ['img/autos/aveo/1.jpg']);
 
 enzhe.addNewAd(
     'Renault',
@@ -66,7 +73,7 @@ enzhe.addNewAd(
 Салон в отличном состоянии. Машина покрашена полностью предыдущим хозяином, 
 поэтому цена ниже рыночной.`,
     160000,
-    []
+    ['img/autos/logan/1.jpg']
 );
 
 ads.addNewSeller('Айдар','+79600458174');
