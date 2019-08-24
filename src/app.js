@@ -86,6 +86,12 @@ server.get('/', (req, res) => {
     res.send(ads.items)
 });
 
+server.get('/sellers', (req, res) => {
+    res.send(ads.sellers)
+});
+
+
+
 const port = process.env.PORT || 7777;
 
 server.listen(port, () => {
