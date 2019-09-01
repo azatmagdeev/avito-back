@@ -1,11 +1,11 @@
 export let itemsNextId = 1;
 
 export class Ad {
-    constructor(id, brand,model, year, km, gearbox, text, price, sellerId, photos, date) {
+    constructor(id, brand, model, year, km, gearbox, text, price, sellerId, photos, date) {
         this.id = id;
         this.brand = brand;
         this.model = model;
-        this.year =year;
+        this.year = year;
         this.km = km;
         this.gearbox = gearbox;
         this.text = text;
@@ -23,15 +23,15 @@ export class Ads {
         this.sellersNextId = 1;
     }
 
-    addNewSeller(name,phoneNumber){
-        const seller = new Seller(this.sellersNextId++,name,phoneNumber);
+    addNewSeller(name, phoneNumber, email, password) {
+        const seller = new Seller(this.sellersNextId++, name, phoneNumber, email, password);
         this.sellers.push(seller);
         return seller;
     }
 
-    getAllItems(){
-        this.items =[];
-        this.sellers.map(seller =>{
+    getAllItems() {
+        this.items = [];
+        this.sellers.map(seller => {
             seller.items.map(ad => {
                 this.items.push(ad)
             })
@@ -43,10 +43,12 @@ export class Ads {
 }
 
 export class Seller {
-    constructor(id,name,phoneNumber){
+    constructor(id, name, phoneNumber, email, password) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.password = password;
         this.items = [];
     }
 

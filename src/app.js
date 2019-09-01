@@ -9,7 +9,7 @@ server.use(cors());
 server.use(bodyParser.json());
 
 const ads = new Ads;
-const azat = ads.addNewSeller('Azat', '+79600440765');
+const azat = ads.addNewSeller('Azat', '+79600440765','azat@ya.ru','2244');
 
 azat.addNewAd('Chevrolet',
     'Lacetti',
@@ -47,7 +47,7 @@ azat.addNewAd('Kia',
 )
 ;
 
-const enzhe = ads.addNewSeller('Энже', '+79172201438');
+const enzhe = ads.addNewSeller('Энже', '+79172201438','enzhe@ya.ru','0711');
 enzhe.addNewAd(
     'Chevrolet',
     'Aveo',
@@ -76,10 +76,10 @@ enzhe.addNewAd(
     ['img/autos/logan/1.jpg']
 );
 
-ads.addNewSeller('Айдар','+79600458174');
+ads.addNewSeller('Айдар','+79600458174','aidar@ya.ru','0307');
 
 
-console.log(ads);
+// console.log(ads);
 
 server.get('/', (req, res) => {
     ads.getAllItems();
@@ -88,6 +88,13 @@ server.get('/', (req, res) => {
 
 server.get('/sellers', (req, res) => {
     res.send(ads.sellers)
+});
+server.get('/sellers/:email', (req, res) =>{
+    const email = req.params.email;
+    console.log(ads.sellers);
+    const seller = ads.sellers.filter(o => o.email === email)[0];
+    console.log(seller);
+    res.send(seller)
 });
 
 
