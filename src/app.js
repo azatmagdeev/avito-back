@@ -9,7 +9,7 @@ server.use(cors());
 server.use(bodyParser.json());
 
 const ads = new Ads;
-const azat = ads.addNewSeller('Azat', '+79600440765','azat@ya.ru','2244');
+const azat = ads.addNewSeller('Azat', '+79600440765', 'azat@ya.ru', '2244');
 
 azat.addNewAd('Chevrolet',
     'Lacetti',
@@ -47,7 +47,7 @@ azat.addNewAd('Kia',
 )
 ;
 
-const enzhe = ads.addNewSeller('Энже', '+79172201438','enzhe@ya.ru','0711');
+const enzhe = ads.addNewSeller('Энже', '+79172201438', 'enzhe@ya.ru', '0711');
 enzhe.addNewAd(
     'Chevrolet',
     'Aveo',
@@ -65,9 +65,9 @@ enzhe.addNewAd(
     'Renault',
     'Logan',
     2011,
-175000,
+    175000,
     'manual',
-`Продаю Рено Логан 1.4.
+    `Продаю Рено Логан 1.4.
 В хорошем состоянии. Комплектация базовая. Сигнализация с автозапуском.
 Кнопка старт-стоп. Сделана хорошая шумоизоляция. Есть зимняя резина. 
 Салон в отличном состоянии. Машина покрашена полностью предыдущим хозяином, 
@@ -76,7 +76,7 @@ enzhe.addNewAd(
     ['img/autos/logan/1.jpg']
 );
 
-ads.addNewSeller('Айдар','+79600458174','aidar@ya.ru','0307');
+ads.addNewSeller('Айдар', '+79600458174', 'aidar@ya.ru', '0307');
 
 
 // console.log(ads);
@@ -89,14 +89,25 @@ server.get('/', (req, res) => {
 server.get('/sellers', (req, res) => {
     res.send(ads.sellers)
 });
-server.get('/sellers/:email', (req, res) =>{
+
+server.post('/sellers', (req, res) => {
+    // const data = req.body;
+    const seller = ads.addNewSeller(req.body.name, req.body.phoneNumber,
+        req.body.email, req.body.password);
+    console.log(ads.sellers);
+    res.send({
+        name: seller.name,
+        phoneNumber: seller.phoneNumber
+    })
+});
+
+server.get('/sellers/:email', (req, res) => {
     const email = req.params.email;
     console.log(ads.sellers);
     const seller = ads.sellers.filter(o => o.email === email)[0];
     console.log(seller);
     res.send(seller)
 });
-
 
 
 const port = process.env.PORT || 7777;

@@ -7,3 +7,15 @@ GET http://localhost:7777/sellers/azat@ya.ru
 Accept: application/json
 
 ###
+
+POST http://localhost:7777/sellers
+Content-Type: application/json
+
+{
+  "name": "sasha",
+  "password": "1234",
+  "phoneNumber": "55555",
+  "email": "sasha@ya.ru"
+}
+
+###
