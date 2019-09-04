@@ -19,3 +19,13 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://localhost:7777/authorization
+Content-Type: application/json
+
+{
+  "email": "enzhe@ya.ru",
+  "password": "0711"
+}
+
+###

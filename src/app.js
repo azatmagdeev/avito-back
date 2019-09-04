@@ -101,12 +101,22 @@ server.post('/sellers', (req, res) => {
     })
 });
 
-server.get('/sellers/:email', (req, res) => {
-    const email = req.params.email;
-    console.log(ads.sellers);
-    const seller = ads.sellers.filter(o => o.email === email)[0];
-    console.log(seller);
-    res.send(seller)
+server.post('/authorization', (req, res) => {
+    const {email, password} = req.body;
+    const arr = ads.sellers.filter(o => o.email === email);
+    if (arr.length === 0) {
+        res.send('Пользователь с таким e-mail не зарегистрирован.');
+        return
+    }
+    ;
+    if (arr[0].password === password) {
+        res.send({id: arr[0].id, name: arr[0].name, phoneNumber: arr[0].phoneNumber});
+        return
+    }
+    ;
+    if (arr[0].password !== password) {
+        res.send('Неверный пароль.')
+    }
 });
 
 
