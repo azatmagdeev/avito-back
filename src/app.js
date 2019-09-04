@@ -105,7 +105,7 @@ server.post('/authorization', (req, res) => {
     const {email, password} = req.body;
     const arr = ads.sellers.filter(o => o.email === email);
     if (arr.length === 0) {
-        res.send({response :'Пользователь с таким e-mail не зарегистрирован.'});
+        res.send({id: null, response: 'Пользователь с таким e-mail не зарегистрирован.'});
         return
     }
 
@@ -115,7 +115,7 @@ server.post('/authorization', (req, res) => {
     }
 
     if (arr[0].password !== password) {
-        res.send({response :'Неверный пароль.'})
+        res.send({id: null, response: 'Неверный пароль.'})
     }
 });
 
