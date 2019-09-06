@@ -53,7 +53,7 @@ export class Seller {
     }
 
     addNewAd(brand, model, year, km, gearbox, text, price, photos) {
-        this.items.push(new Ad(
+        const item = new Ad(
             itemsNextId++,
             brand,
             model,
@@ -65,6 +65,8 @@ export class Seller {
             this.id,
             photos,
             new Date()
-        ))
+        );
+        this.items.push(item);
+        return item
     }
 }

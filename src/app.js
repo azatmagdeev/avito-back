@@ -119,6 +119,15 @@ server.post('/authorization', (req, res) => {
     }
 });
 
+server.post('/', (req, res) => {
+    const seller = ads.sellers.filter(o => o.id === req.body.sellerId)[0];
+    const item = seller.addNewAd(
+        req.body.brand, req.body.model, req.body.year, req.body.km,
+        req.body.gearbox, req.body.text, req.body.price, req.body.photos
+    );
+    res.send(item)
+});
+
 
 const port = process.env.PORT || 7777;
 
