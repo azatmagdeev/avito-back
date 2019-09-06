@@ -1,12 +1,49 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-// import fs from 'fs-extra';
+import fs from 'fs-extra';
+import multer from 'multer';
+import uuid from 'uuid';
+import path from 'path';
 import {Ads} from "./lib";
 
 const server = express();
 server.use(cors());
-server.use(bodyParser.json());
+server.use(bodyParser.json({limit:"50mb"}));
+
+const publicPath = path.resolve(__dirname, 'public');
+fs.ensureDirSync(publicPath);
+server.use('/images', express.static(publicPath));
+const storage = multer.diskStorage({
+    destination(req, file, callback) {
+        callback(null, publicPath);
+    },
+    filename(req, file, callback) {
+        const name = uuid.v4();
+        let fullName = '';
+        if (file.mimetype === 'image/png') {
+            fullName = `${name}.png`;
+        } else if (file.mimetype === 'image/jpeg') {
+            fullName = `${name}.jpg`;
+        } else {
+            callback(new Error('invalid file'));
+            return;
+        }
+        callback(null, fullName);
+    }
+});
+
+const imageUpload = multer({storage}).single('image');
+server.post('/upload', (req, res) => {
+    imageUpload(req, res, err => {
+        if (err) {
+            res.status(400).send(err);
+            return;
+        }
+        res.send({filename: req.file.filename});
+        console.log(res)
+    })
+});
 
 const ads = new Ads;
 const azat = ads.addNewSeller('Azat', '+79600440765', 'azat@ya.ru', '2244');
