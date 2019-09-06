@@ -80,6 +80,8 @@ azat.addNewAd('Kia',
     550000,
     [
         'img/autos/rio/1.jpg',
+        'img/autos/rio/2.jpg',
+        'img/autos/rio/3.jpg'
     ],
 )
 ;
@@ -96,7 +98,11 @@ enzhe.addNewAd(
 Без коррозии и дефектов
 Зимняя резина в комплекте`,
     233000,
-    ['img/autos/aveo/1.jpg']);
+    [
+        'img/autos/aveo/1.jpg',
+        'img/autos/aveo/2.jpg',
+        'img/autos/aveo/3.jpg'
+    ]);
 
 enzhe.addNewAd(
     'Renault',
@@ -110,7 +116,10 @@ enzhe.addNewAd(
 Салон в отличном состоянии. Машина покрашена полностью предыдущим хозяином, 
 поэтому цена ниже рыночной.`,
     160000,
-    ['img/autos/logan/1.jpg']
+    [
+        'img/autos/logan/1.jpg',
+        'img/autos/logan/2.jpg'
+    ]
 );
 
 ads.addNewSeller('Айдар', '+79600458174', 'aidar@ya.ru', '0307');
