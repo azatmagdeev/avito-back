@@ -142,6 +142,7 @@ server.post('/sellers', (req, res) => {
         req.body.email, req.body.password);
     console.log(ads.sellers);
     res.send({
+        id: seller.id,
         name: seller.name,
         phoneNumber: seller.phoneNumber
     })
